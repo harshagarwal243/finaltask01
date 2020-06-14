@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    background-color: aliceblue;
+    position: relative;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.topnav {
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+  }
+
+  #sidenav {
+      background-color: black;
+      color: white;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0px;
+      width : 0;
+      overflow-x : hidden;
+      z-index : 4;
+      transition: width 500ms;
+      padding: 10px 0px 0px 0px;
+  }
+
+  #sidenav a {
+      display: block;
+      color: white;
+      text-align: left;
+      text-decoration: none;
+      box-sizing: border-box;
+      padding: 5px;
+      margin : 0px 0px 5px 0px;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    box-sizing: border-box;
+  }
+  
+  a:hover {
+    background-color: black !important;
+    color: white;
+  }
+  
+   a.active {
+    color: orange !important;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+
+  .container {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-columns: 50% 50%;
+      grid-gap: 10px;
+      box-sizing: border-box;
+      padding: 10px;
+  }
+
+  .container > #left {
+     padding: 10px;
+     text-align: left;
+  }
+
+  
+   span { padding: 5px;
+         box-sizing: border-box;
+        display: inline-block;}
+
+  img { border-radius: 10px;}
+
+  /* responsive */
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+
+     .topnav a.icon {
+      float: right;
+      display: block;
+     }
+
+     #sidenav.responsive {
+         width : 60%;
+     }
+   
+  }
+
+  @media screen and (max-width : 700px)
+   {
+       .container {
+           display: flex;
+           flex-direction: column-reverse;
+           justify-content: center;
+       }
+   }
+
+   @media screen and (min-width : 701px) and (max-width : 850px)
+    {
+        .container{
+            grid-template-columns: auto auto;
+            grid-gap: 0px;
+        }
+    }
